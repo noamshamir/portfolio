@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+    </head>
+    <body>  
+        <div id="grid-container"></div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <p>Purchase rejected. Not enough coins. Get more coins by clicking the button in the top left.</p>
+                <button id="close-modal" onclick="closeModal()">X</button>
+            </div>
+        </div>
+        <div id="top-left-button">
+            <button onclick="modifyCoins(1)">
+                <img src="images/coins/1.png" alt="Button Image" class="button-image" />
+            </button>
+        </div>
+        <div id="bank-account">
+            <button id="coin-count" onclick="visualizeCoins()">$0</button>
+            <div id="visualize-coins"></div>
+        </div>        
+        <div id="main">
+            <div id="nav-bar" class="w3-bar w3-black">
+                <button class="tab">
+                    <a href="#bio">About Me</a>
+                </button>
+                <button class="tab">
+                    <a href="#projects">Projects</a>
+                </button>
+                <button class="tab">
+                    <a href="#experience">Experience</a>
+                </button>
+                <button class="tab">
+                    <a href="#coins">Coin shop</a>
+                </button>
+            </div>
+
+            <section id="bio" class="bio-container">
+                <div id="wave-container">
+                    <span id="wave-hand" class="wave-hand">👋</span>
+                    <p class="hi">Hi, I'm</p>
+                </div>
+                
+                <div id="bio-header">
+                    <h2 class="myname" style="color: rgb(255, 255, 255)">Noam</h2>
+                    <h2 class="myname" style="color: white">Shamir</h2>
+                </div>
+                <p class="role">High School Sophomore</p>
+                <p class="interest">Web Developer</p>
+                <p class="location">
+                    <i class="fas fa-map-marker-alt"></i> Austin, Texas
+                </p>
+                <div class="buttons">
+                    <a href="https://github.com/noamshamir" class="icon"
+                        ><i class="fab fa-github"></i
+                    ></a>
+                </div>
+            </section>
+            <section>
+                <div id="projects">
+                    <div id="projects-header" class="tab-header">
+                        <h2>Projects</h2>
+                    </div>
+                    <div class="card-container">
+                        <div class="card" class="card-general">
+                            <img
+                                src="images/projects/chain_translate.png"
+                                alt="Project Image"
+                                class="card-image"
+                            />
+                            <div class="card-header">
+                                <h3 class="card-title">Chain Translator</h3>
+                                <div class="card-links">
+                                    <a
+                                        href="https://github.com/noamshamir/Google-Chain-Translator"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="icon-link"
+                                        aria-label="View Source Code on GitHub"
+                                    >
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-tools">
+                                <div class="card-tools">
+                                    <div class="pill" id="html-pill">
+                                        <img
+                                            src="images/icons/html.webp"
+                                            alt="HTML"
+                                            class="pill-icon"
+                                        />
+                                        <div class="pill-grid-container"></div>
+
+                                        <span class="pill-text">HTML</span>
+                                    </div>
+                                    <div class="pill" id="css-pill">
+                                        <img
+                                            src="images/icons/css.png"
+                                            alt="CSS"
+                                            class="pill-icon"
+                                        />
+                                        <span class="pill-text">CSS</span>
+                                    </div>
+                                    <div class="pill" id="js-pill">
+                                        <img
+                                            src="images/icons/javascript.webp"
+                                            alt="JavaScript"
+                                            class="pill-icon"
+                                        />
+                                        <span class="pill-text"
+                                            >JavaScript</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blur-container">
+                                <div id="google-chain-translate-description" class="blur card-description">
+                                    <p>
+                                        A user inputs a phrase, which is translated through
+                                         random languages using the Google Translate API.
+                                          Like a game of telephone, the output at the end of the chain is often surprising.
+                                    </p>
+                                </div>
+                                <button class="unlock-box" onclick="unblurContent('google-chain-translate-description', 20)">
+                                    <i class="fa fa-lock"></i>
+                                    <img src="images/coins/20.png" alt="Coin Icon" class="coin-icon" />
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card" class="card-general">
+                            <img
+                                src="images/projects/chopsticks_minimax.png"
+                                alt="Project Image"
+                                class="card-image"
+                            />
+                            <div class="card-header">
+                                <h3 class="card-title">Chopsticks Minimax</h3>
+                                <div class="card-links">
+                                    <a
+                                        href="https://github.com/noamshamir/chopsticks"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="icon-link"
+                                        aria-label="View Source Code on GitHub"
+                                        onclick = 'modifyCoins(50)'
+                                    >
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-tools">
+                                <div class="card-tools">
+                                    <div class="pill" id="python-pill">
+                                        <img
+                                            src="images/icons/python.webp"
+                                            alt="Python"
+                                            class="pill-icon"
+                                        />
+                                        <span class="pill-text">Python</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blur-container" id="tic-tac-toe-blur-container">
+                                <div id="chopsticks-description" class="blur card-description">
+                                    <p>
+                                        A perfect chopsticks bot utilizing the
+                                        minimax algorithm and recursive backtracking to always make the 
+                                        optimal chopsticks move (including both splits and attacks). 
+                                    </p>
+                                </div>
+                                <button class="unlock-box" onclick="unblurContent('chopsticks-description', 20)">
+                                    <i class="fa fa-lock"></i>
+                                    <img src="images/coins/20.png" alt="Coin Icon" class="coin-icon" />
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card" class="card-general">
+                            <img
+                                src="images/projects/por.png"
+                                alt="Project Image"
+                                class="card-image"
+                            />
+                            <div class="card-header">
+                                <h3 class="card-title">Proof of Residence</h3>
+                                <div class="card-links">
+                                    <a
+                                        href="https://github.com/noamshamir/mabel-letter-generator"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="icon-link"
+                                        aria-label="View Source Code on GitHub"
+                                    >
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-tools">
+                                <div class="card-tools">
+                                    <div class="pill" id="python-pill">
+                                        <img
+                                            src="images/icons/python.webp"
+                                            alt="Python"
+                                            class="pill-icon"
+                                        />
+                                        <span class="pill-text">Python</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blur-container" id="por-blur-container">
+                                <div id="por-description" class="blur card-description">
+                                    <p>
+                                        A python program that automates filling out proof of residence letter 
+                                        for immigrants in MA, helping hundreds of immigrants and 
+                                        reducing workload for lawyers.
+                                    </p>
+                                </div>
+                                <button class="unlock-box" onclick="unblurContent('por-description', 20)">
+                                    <i class="fa fa-lock"></i>
+                                    <img src="images/coins/20.png" alt="Coin Icon" class="coin-icon" />
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card" class="card-general">
+                            <img
+                                src="images/projects/unit_conversion.png"
+                                alt="Project Image"
+                                class="card-image"
+                            />
+                            <div class="card-header">
+                                <h3 class="card-title">Unit Conversion</h3>
+                                <div class="card-links">
+                                    <a
+                                        href="https://github.com/noamshamir/unit-conversion-app"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="icon-link"
+                                        aria-label="View Source Code on GitHub"
+                                    >
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-tools">
+                                <div class="card-tools">
+                                    <div class="pill" id="dart-pill">
+                                        <img
+                                            src="images/icons/dart.png"
+                                            alt="Dart"
+                                            class="pill-icon"
+                                        />
+                                        <span class="pill-text">Dart</span>
+                                    </div>
+                                    <div class="pill" id="flutter-pill">
+                                        <img
+                                            src="images/icons/flutter.png"
+                                            alt="Flutter"
+                                            class="pill-icon"
+                                        />
+                                        <span class="pill-text">Flutter</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blur-container" id="pot-blur-container">
+                                <div id="unit-conversion-description" class="blur card-description">
+                                    <p>
+                                        A Flutter App that converts a wide range of units, including temperature, volume, weight, length, and size. Available offline.
+                                </div>
+                                <button class="unlock-box" onclick="unblurContent('unit-conversion-description', 20)">
+                                    <i class="fa fa-lock"></i>
+                                    <img src="images/coins/20.png" alt="Coin Icon" class="coin-icon" />
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card" class="card-general">
+                            <img
+                                src="images/projects/enigma.png"
+                                alt="Project Image"
+                                class="card-image"
+                            />
+                            <div class="card-header">
+                                <h3 class="card-title">Enigma Machine</h3>
+                                <div class="card-links">
+                                    <a
+                                        href="https://github.com/noamshamir/mabel-letter-generator"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="icon-link"
+                                        aria-label="View Source Code on GitHub"
+                                    >
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-tools">
+                                <div class="card-tools">
+                                    <div class="pill" id="python-pill">
+                                        <img
+                                            src="images/icons/python.webp"
+                                            alt="Python"
+                                            class="pill-icon"
+                                        />
+                                        <span class="pill-text">Python</span>
+                                    </div>
+                                </div>
+                                <div class="card-tools">
+                                    <div class="pill" id="python-pill" class="t-kinter-pill">
+                                        <img
+                                            src="images/icons/tkinter.png"
+                                            alt="Python"
+                                            class="pill-icon"
+                                        />
+                                        <span class="pill-text">TKinter</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blur-container" id="por-blur-container">
+                                <div id="enigma-description" class="blur card-description">
+                                    <p>
+                                        A fully-accurate emulation of the process behind the WWII Enigma Machines, with TKinter UX to use the machine. Works for both encryption and decryption.
+                                    </p>
+                                </div>
+                                <button class="unlock-box" onclick="unblurContent('enigma-description', 20)">
+                                    <i class="fa fa-lock"></i>
+                                    <img src="images/coins/20.png" alt="Coin Icon" class="coin-icon" />
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-holder"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="experience">
+                <div id="experience-header" class="tab-header">
+                    <h2>Experience</h2>
+                </div>
+                <div class="job-card-info" class="card-general">
+                    <div class="top-row">
+                        <h3 class="job-title">Intern</h3>
+                        <div id="job-dates">August 2024</div>
+                    </div>
+                    <h4 class="company-name">
+                        Mabel Center for Immigrant Justice
+                    </h4>
+                    <p class="location" id="job-location">
+                        <i class="fas fa-map-marker-alt"></i> Boston, MA
+                    </p>
+                    <div class="pill" id="python-pill-job">
+                        <img
+                            src="images/icons/python.webp"
+                            alt="Python"
+                            class="pill-icon"
+                        />
+                        <span class="pill-text">Python</span>
+                    </div>
+                    <div class="blur-container" id="job-blur-container">
+                        <div id="job-description" class="blur card-description">
+                            <p>
+                                <ul>
+                                    <li>
+                                        • Automated processes previously being done manually, including proof of residence letters.
+                                    </li>
+                                    <li>
+                                        • Filled large parts of SIJ forms automatically with basic info for clients who might qualify for a SIJ case.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <button class="unlock-box" onclick="unblurContent('job-description', 50)">
+                            <i class="fa fa-lock"></i>
+                            <img src="images/coins/50.png" alt="Coin Icon" class="coin-icon" />
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section id="coins">
+                <div class="tab-header">
+                    <h2>Coin shop</h2>
+                </div>
+                <div class="offer-card" class="card-general" id="color-picker">
+                    <h2 id="color-selector-title">Background Color</h2>
+                    <h3 id="color-selector-description">Pick a color for the background</h3>
+                    <input type="color" id="color-selector" name="favcolor" value="#d663ce">
+                    <button id="unlock-background" class="unlock-box" onclick="changeColor()">
+                        <h3 id="purchase-background">Change color for 100</h3>
+                        <img src="images/coins/100.png" alt="Coin Icon" class="coin-icon" />
+                    </button>
+                </div>
+                <hr class="divider">
+                <div class="header-divider">
+                    <div class="header-left">
+                        <p class="header-left">Noam Shamir</p>
+                    </div>
+                    <div class="header-right">
+                        <a href="mailto:noam.shamir@sstx.org" target="_blank" aria-label="Email" >
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.github.com" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <hr class="divider-line">
+                
+
+            </section>
+            <br />
+            <br />
+        </div>
+        <script src="script.js"></script>
+
+    </body>
+</html>
