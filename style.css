@@ -923,6 +923,6 @@ ul {
 }
 
 .coin-animate {
-    position: absolute !important;
+    position: fixed !important;
     animation: moveCoin 0.5s ease-out !important;
 }
