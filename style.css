@@ -603,14 +603,14 @@ ul {
     margin-left: -10px;
 }
 
-#top-left-button {
+.top-left-button {
     position: fixed;
     top: 10px;
     left: 10px;
     z-index: 10;
 }
 
-#top-left-button button {
+.top-left-button button {
     background: none;
     border: none;
     cursor: pointer;
@@ -897,4 +897,32 @@ ul {
 .fab:hover {
     color: rgba(255, 255, 255, 0.6);
     transform: scale(1.1);
+}
+
+#add-one-moving-coin-div {
+    padding-left: 30px;
+    display: none;
+    position: absolute;
+}
+
+#add-one-button {
+    z-index: 1;
+}
+
+@keyframes moveCoin {
+    from {
+        top: 10px;
+        left: 30px;
+        opacity: 1;
+    }
+    to {
+        top: 50px;
+        left: 90vw;
+        opacity: 0;
+    }
+}
+
+.coin-animate {
+    position: absolute !important;
+    animation: moveCoin 0.5s ease-out !important;
 }

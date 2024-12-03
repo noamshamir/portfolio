@@ -24,6 +24,48 @@ window.onload = function () {
     }
 };
 
+function incrementCoinsButton() {
+    console.log("Button clicked!");
+    modifyCoins(1);
+    moveCoinToAccount();
+}
+
+function moveCoinToAccount() {
+    console.log("Doing animation!");
+
+    // Create the coin container
+    const coin = document.createElement("div");
+    coin.classList.add("coin");
+    coin.style.position = "absolute";
+    coin.style.top = "10px";
+    coin.style.zIndex = "5";
+    coin.style.left = "30px"; // Start position
+    coin.style.zIndex = "5";
+
+    const img = document.createElement("img");
+    img.classList.add("button-image");
+    img.id = "add-one-moving-coin";
+    img.src = "images/coins/1.png";
+    img.style.width = "50px";
+    img.style.height = "50px";
+    img.style.zIndex = "5";
+    coin.appendChild(img);
+
+    document.body.appendChild(coin);
+    console.log("Coin added to DOM");
+
+    // Trigger animation
+    requestAnimationFrame(() => {
+        coin.classList.add("coin-animate");
+    });
+
+    // Remove coin after animation
+    coin.addEventListener("animationend", () => {
+        console.log("Animation ended, removing coin");
+        coin.remove();
+    });
+}
+
 function unblurOnload(id) {
     const content = document.getElementById(id);
     const button = content.nextElementSibling;

@@ -18,15 +18,18 @@
                 <button id="close-modal" onclick="closeModal()">X</button>
             </div>
         </div>
-        <div id="top-left-button">
-            <button onclick="modifyCoins(1)">
-                <img src="images/coins/1.png" alt="Button Image" class="button-image" />
+        <div class="top-left-button">
+            <button onclick="incrementCoinsButton()">
+                <img src="images/coins/1.png" alt="Button Image" class="button-image" id="add-one-button"/>
             </button>
         </div>
         <div id="bank-account">
             <button id="coin-count" onclick="visualizeCoins()">$0</button>
             <div id="visualize-coins"></div>
-        </div>        
+        </div>
+        <div class="top-left-button" id="add-one-moving-coin-div">        
+            <img class="button-image" id="add-one-moving-coin" src="images/coins/1.png">        
+        </div>
         <div id="main">
             <div id="nav-bar" class="w3-bar w3-black">
                 <button class="tab">
@@ -59,6 +62,9 @@
                     <i class="fas fa-map-marker-alt"></i> Austin, Texas
                 </p>
                 <div class="buttons">
+                    <a href="mailto:noam.shamir@sstx.org" target="_blank" aria-label="Email" >
+                        <i class="fas fa-envelope"></i>
+                    </a>
                     <a href="https://github.com/noamshamir" class="icon"
                         ><i class="fab fa-github"></i
                     ></a>
