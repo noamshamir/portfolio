@@ -912,11 +912,11 @@ ul {
 @keyframes moveCoin {
     from {
         top: 10px;
-        left: 30px;
+        left: 50px;
         opacity: 1;
     }
     to {
-        top: 50px;
+        top: 40px;
         left: 90vw;
         opacity: 0;
     }
