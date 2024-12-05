@@ -223,12 +223,14 @@ body {
 }
 
 .tab:active {
-    background-color: rgb(102, 102, 112);
-    color: rgb(33, 33, 33);
+    background-color: rgb(135, 135, 147);
 }
 
+.tab:active a {
+    color: rgb(33, 33, 33);
+}
 .current-tab {
-    background-color: rgb(102, 102, 112);
+    background-color: rgb(135, 135, 147);
 }
 
 .current-tab a {
@@ -826,11 +828,6 @@ ul {
     font-size: 1.4rem;
 }
 
-.t-kinter-pill {
-    margin: 0;
-    margin-left: -20px;
-}
-
 .header-divider {
     display: flex;
     justify-content: space-between;
@@ -910,4 +907,9 @@ ul {
 .coin-animate {
     position: fixed !important;
     animation: moveCoin 0.5s ease-out !important;
+}
+
+.t-kinter-pill {
+    margin: 0;
+    transform: translateX(-10px);
 }
