@@ -25,8 +25,10 @@ window.onload = function () {
 };
 
 function incrementCoinsButton(increment = 1) {
-    modifyCoins(increment);
-    moveCoinToAccount();
+    modifyCoins(increment, 0.5);
+    if (modifyCoins) {
+        moveCoinToAccount();
+    }
 }
 
 function moveCoinToAccount() {
@@ -47,7 +49,6 @@ function moveCoinToAccount() {
     document.body.appendChild(coin);
     console.log("Coin added to DOM");
 
-    // Trigger animation
     requestAnimationFrame(() => {
         coin.classList.add("coin-animate");
     });
@@ -70,13 +71,18 @@ function unblurOnload(id) {
     }
 }
 
-function modifyCoins(change) {
+function modifyCoins(change, delay = 0) {
     if (user_coins + change >= 0) {
         user_coins += change;
-        document.getElementById("coin-count").innerText = `$${user_coins}`;
-        visualizeCoins();
-        localStorage.setItem("user_coins", user_coins);
-        console.log(`+${change}`);
+        setTimeout(() => {
+            document.getElementById("coin-count").innerText = `$${user_coins}`;
+            visualizeCoins();
+            localStorage.setItem("user_coins", user_coins);
+            console.log(`+${change}`);
+            return true;
+        }, delay * 1000);
+    } else {
+        return false;
     }
 }
 
