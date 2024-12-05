@@ -53,7 +53,6 @@ function moveCoinToAccount() {
         coin.classList.add("coin-animate");
     });
 
-    // Remove coin after animation
     coin.addEventListener("animationend", () => {
         console.log("Animation ended, removing coin");
         coin.remove();
@@ -305,7 +304,6 @@ document.addEventListener("DOMContentLoaded", () => {
         waveHand.style.animation = "wave-animation 0.6s ease-in-out";
     });
 
-    // Optional: Reset animation style after it completes
     waveHand.addEventListener("animationend", () => {
         waveHand.style.animation = "none";
     });
