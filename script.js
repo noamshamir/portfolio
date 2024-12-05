@@ -12,14 +12,15 @@ window.onload = function () {
     }
     document.getElementById("coin-count").innerText = `$${user_coins}`;
     visualizeCoins();
-    for (id of [
+    const ids = [
         "chopsticks-description",
         "google-chain-translate-description",
         "por-description",
         "unit-conversion-description",
         "enigma-description",
         "job-description",
-    ]) {
+    ];
+    for (id of ids) {
         unblurOnload(id);
     }
 };
