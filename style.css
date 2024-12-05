@@ -39,10 +39,6 @@ span {
 
 #main {
     transition: margin-left 0.5s;
-}
-
-#main {
-    transition: margin-left 0.5s;
     padding: 20px 40px;
 }
 
@@ -78,62 +74,46 @@ body {
     background-color: rgb(20, 20, 20);
     color: white;
     font-family: Arial, sans-serif;
-    /* background-image: url(noise.svg); */
     margin: 0;
     padding: 0;
     width: 100%;
-
-    /* background-image: linear-gradient(
-            rgba(70, 70, 70, 0.7) 0.1em,
-            transparent 0.1em
-        ),
-        linear-gradient(90deg, rgba(70, 70, 70, 0.7) 0.1em, transparent 0.1em);
-    background-size: 3em 3em; */
 }
 
 #grid-container {
-    position: fixed; /* Fixed position for the background */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    z-index: 0; /* Push behind all other content */
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
     display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(50px, 1fr)
-    ); /* Adjust grid to screen width */
-    grid-auto-rows: 1fr; /* Ensure rows match columns */
-    gap: 1px; /* Space between grid items */
-    background-color: #262528; /* Optional */
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 1px;
+    background-color: #262528;
 }
 
-/* Default state for all grid items */
 .grid-item {
-    background-color: #18181a; /* Default black */
+    background-color: #18181a;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    aspect-ratio: 1; /* Keeps square shape */
-    pointer-events: all; /* Ensure hover works for grid items */
+    aspect-ratio: 1;
+    pointer-events: all;
 }
 
-/* Hover effect for non-clicked items */
 .grid-item:not(.clicked):hover {
-    background-color: #262528; /* Grey on hover */
+    background-color: #262528;
 }
 
-/* After-hover fade animation for non-clicked items */
 .grid-item:not(.clicked):not(:hover) {
     animation: fade-animation 1s ease-in-out;
 }
 
-/* No animation for clicked items */
 .grid-item.clicked {
-    animation: none; /* Prevent fade animation */
-    background-color: #262528; /* Grey */
+    animation: none;
+    background-color: #262528;
     transition: background-color 0.3s ease;
 }
 
-/* Keyframes for fade animation */
 @keyframes fade-animation {
     0%,
     10% {
@@ -141,9 +121,6 @@ body {
     }
     15% {
         background-color: #1c1c1f;
-    }
-    20% {
-        background-color: #1b1b1e;
     }
     20% {
         background-color: #1a1a1d;
@@ -191,8 +168,8 @@ body {
 
 #wave-container {
     display: flex;
-    align-items: center; /* Aligns hand and text vertically */
-    gap: 10px; /* Adds space between hand and text */
+    align-items: center;
+    gap: 10px;
 }
 
 .hi {
@@ -235,7 +212,7 @@ body {
     padding: 10px;
     border: none;
     border-radius: 20px;
-    background-color: rgba(40, 40, 40, 0.9);
+    background-color: rgba(40, 40, 40, 0);
     cursor: pointer;
 }
 
@@ -246,8 +223,16 @@ body {
 }
 
 .tab:active {
-    background-color: rgb(60, 60, 60);
-    color: rgb(255, 255, 255);
+    background-color: rgb(102, 102, 112);
+    color: rgb(33, 33, 33);
+}
+
+.current-tab {
+    background-color: rgb(102, 102, 112);
+}
+
+.current-tab a {
+    color: rgb(33, 33, 33);
 }
 
 .bio-container {
@@ -348,7 +333,7 @@ body {
 }
 
 .card:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
     /* box-shadow: 0px 0px 20px 20px rgba(252, 252, 252, 0.05); */
 }
 .card-holder {
@@ -505,7 +490,7 @@ body {
 }
 
 .job-card-info:hover {
-    transform: scale(1.03);
+    transform: scale(1.01);
     /* box-shadow: 0px 0px 20px 20px rgba(252, 252, 252, 0.05); */
 }
 

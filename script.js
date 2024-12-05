@@ -24,23 +24,17 @@ window.onload = function () {
     }
 };
 
-function incrementCoinsButton() {
-    console.log("Button clicked!");
-    modifyCoins(1);
+function incrementCoinsButton(increment = 1) {
+    modifyCoins(increment);
     moveCoinToAccount();
 }
 
 function moveCoinToAccount() {
-    console.log("Doing animation!");
-
-    // Create the coin container
     const coin = document.createElement("div");
     coin.classList.add("coin");
     coin.style.position = "absolute";
     coin.style.top = "10px";
-    coin.style.zIndex = "5";
-    coin.style.left = "30px"; // Start position
-    coin.style.zIndex = "5";
+    coin.style.left = "30px";
 
     const img = document.createElement("img");
     img.classList.add("button-image");
@@ -48,7 +42,6 @@ function moveCoinToAccount() {
     img.src = "images/coins/1.png";
     img.style.width = "50px";
     img.style.height = "50px";
-    img.style.zIndex = "5";
     coin.appendChild(img);
 
     document.body.appendChild(coin);
@@ -310,4 +303,27 @@ document.addEventListener("DOMContentLoaded", () => {
     waveHand.addEventListener("animationend", () => {
         waveHand.style.animation = "none";
     });
+});
+
+document.addEventListener("scroll", () => {
+    const tabs = document.querySelectorAll(".tab");
+    for (const tab of tabs) {
+        tab.classList.remove("current-tab");
+    }
+
+    let current_vertical_position = window.scrollY;
+    console.log(current_vertical_position);
+    if (current_vertical_position <= 320) {
+        document.getElementById("bio-tab").classList.add("current-tab");
+    } else if (
+        current_vertical_position >= 320 &&
+        current_vertical_position <= 1300
+    ) {
+        document.getElementById("projects-tab").classList.add("current-tab");
+    } else if (
+        current_vertical_position >= 1300 &&
+        current_vertical_position <= 1754
+    ) {
+        document.getElementById("experience-tab").classList.add("current-tab");
+    }
 });
