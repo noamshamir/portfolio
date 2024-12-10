@@ -303,7 +303,7 @@ function populateGrid() {
     const width = window.innerWidth;
     const height = window.innerHeight;
 
-    const cellSize = 25;
+    const cellSize = 100;
     const columns = Math.ceil(width / cellSize);
     const rows = Math.ceil(height / cellSize);
 

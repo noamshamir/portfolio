@@ -60,7 +60,8 @@ span {
 .divider {
     height: 2px;
     background-color: rgb(156, 157, 166);
-    margin: 100px 20px 20px;
+    margin: 100px 27px 20px;
+    margin-top: 80px;
     border: none;
     opacity: 0.5;
 }
@@ -408,7 +409,7 @@ body {
 .pill-icon {
     width: 16px;
     height: 16px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .pill-text {
@@ -464,13 +465,12 @@ body {
 }
 
 #experience-header {
-    padding-top: 100px;
 }
 
 #experience-header {
     padding-top: 80px;
     padding-left: 30px;
-    margin-bottom: 20px;
+    padding-bottom: 10px;
     font-size: 1.5rem;
     color: white;
 }
@@ -544,7 +544,7 @@ body {
     display: inline-flex;
     align-items: center;
     padding: 5px 10px;
-    background-color: rgb(30, 30, 30);
+    background-color: #262528;
     border-radius: 15px;
     border: 1px solid rgb(61, 61, 61);
     font-size: 0.9rem;
@@ -582,6 +582,7 @@ ul {
     align-items: center;
     padding: 10px;
     border: 1px solid rgb(60, 60, 60);
+    background-color: #262528;
 }
 
 #job-description {
@@ -720,90 +721,6 @@ ul {
     margin-bottom: 5px;
 }
 
-.offer-card:hover {
-    transform: scale(1.03);
-}
-
-.coin-card-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 20px;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-}
-
-.offer-card {
-    width: 300px;
-    padding: 20px;
-    margin-left: 30px;
-    height: 300px;
-    border-radius: 10px;
-    background-color: #28272b;
-    border: 1px solid rgb(70, 70, 70);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-#coins {
-    margin-top: 60px;
-}
-
-#color-selector {
-    border: 1px solid rbg(100, 100, 100);
-    margin-top: 15px;
-    height: 150px;
-    width: 150px;
-}
-
-#color-selector-title {
-    font-size: 1.4rem;
-    font-weight: bold;
-}
-
-#color-selector-description {
-    border: 1px solid rbg(100, 100, 100);
-
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1rem;
-    margin-top: 15px;
-}
-
-#purchase-background {
-    font-size: 1rem;
-    z-index: 10;
-}
-
-#unlock-background {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 5px 10px;
-    background-color: rgb(63, 68, 87);
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 10px;
-    border: none;
-    position: absolute;
-    bottom: -40%;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: transform 0.3s;
-    z-index: 10;
-}
-
-#unlock-background:hover {
-    transform: translateX(-50%) scale(1.05);
-}
-
 .modal {
     display: none;
     position: fixed;
@@ -844,7 +761,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 0px;
     z-index: 3;
 }
 
@@ -853,13 +770,15 @@ ul {
     font-weight: bold;
     color: white;
     margin: 0;
+    padding-left: 15px;
     z-index: 3;
 }
 
 .header-right {
     display: flex;
-    gap: 15px;
+    gap: 16px;
     z-index: 3;
+    padding-right: 10px;
 }
 
 .social-icons {
