@@ -483,7 +483,6 @@ body {
     border-radius: 5px;
     background-color: #28272b;
     border: 1px solid rgb(70, 70, 70);
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
     transition: transform 0.3s;
     height: 250px;
     margin-left: 30px;
@@ -493,7 +492,6 @@ body {
 
 .job-card-info:hover {
     transform: scale(1.01);
-    /* box-shadow: 0px 0px 20px 20px rgba(252, 252, 252, 0.05); */
 }
 
 .job-card-header {
@@ -605,6 +603,21 @@ ul {
     z-index: 0;
 }
 
+.top-right-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+.top-right-button button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 0;
+}
+
 .button-image {
     width: 50px;
     height: auto;
@@ -709,7 +722,6 @@ ul {
 
 .offer-card:hover {
     transform: scale(1.03);
-    /* box-shadow: 0px 0px 20px 20px rgba(252, 252, 252, 0.05); */
 }
 
 .coin-card-container {
@@ -882,7 +894,13 @@ ul {
 }
 
 #add-one-moving-coin-div {
-    padding-left: 30px;
+    padding-left: 50px;
+    display: none;
+    position: absolute;
+}
+
+#moving-coin-div {
+    padding-right: 30px;
     display: none;
     position: absolute;
 }
@@ -912,4 +930,21 @@ ul {
 .t-kinter-pill {
     margin: 0;
     transform: translateX(-10px);
+}
+
+@keyframes moveCoin {
+    from {
+        top: var(--start-top, 0px);
+        left: var(--start-left, 0px);
+        opacity: 1;
+    }
+    to {
+        top: 10px;
+        left: 90vw;
+        opacity: 0;
+    }
+}
+
+.coin-animate {
+    animation: moveCoin 1s ease-out forwards;
 }

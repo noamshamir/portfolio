@@ -35,9 +35,6 @@ function incrementCoinsButton(increment = 1) {
 function moveCoinToAccount() {
     const coin = document.createElement("div");
     coin.classList.add("coin");
-    coin.style.position = "absolute";
-    coin.style.top = "10px";
-    coin.style.left = "30px";
 
     const img = document.createElement("img");
     img.classList.add("button-image");
@@ -56,6 +53,49 @@ function moveCoinToAccount() {
 
     coin.addEventListener("animationend", () => {
         console.log("Animation ended, removing coin");
+        coin.remove();
+    });
+}
+
+function moveCoinFromAccount(cost, targetElementId) {
+    const bankAccount = document.getElementById("bank-account");
+    const bankRect = bankAccount.getBoundingClientRect();
+
+    const targetElement = document.getElementById(targetElementId);
+    const targetRect = targetElement.getBoundingClientRect();
+
+    const coin = document.createElement("div");
+    coin.classList.add("coin");
+    coin.style.position = "fixed";
+    coin.style.top = `40px`;
+    coin.style.left = `90vw`;
+    coin.style.zIndex = 1000;
+
+    const img = document.createElement("img");
+    img.classList.add("button-image");
+    img.src = `images/coins/${cost}.png`;
+    img.style.width = "30px";
+    img.style.height = "30px";
+    coin.appendChild(img);
+
+    document.body.appendChild(coin);
+
+    requestAnimationFrame(() => {
+        coin.style.transition = "all 1s ease-out";
+        coin.style.top = `${targetRect.top}px`;
+        coin.style.left = `${targetRect.left + targetRect.width + 10}px`;
+        coin.style.opacity = 0.8;
+    });
+
+    requestAnimationFrame(() => {
+        coin.style.transition = "all 1s ease-out";
+        coin.style.top = `${targetRect.top}px`;
+        coin.style.left = `${targetRect.left + targetRect.width + 10}px`;
+        coin.style.opacity = 0;
+    });
+
+    // Remove the coin after animation
+    coin.addEventListener("transitionend", () => {
         coin.remove();
     });
 }
@@ -86,9 +126,10 @@ function modifyCoins(change, delay = 0) {
     }
 }
 
-function purchase(cost) {
+function purchase(cost, purchase_button_id) {
     if (user_coins >= cost) {
-        modifyCoins(-cost);
+        modifyCoins(-cost, 1);
+        moveCoinFromAccount(cost, purchase_button_id);
     } else {
         showModal();
     }
@@ -98,10 +139,13 @@ function unblurContent(id, cost) {
     const content = document.getElementById(id);
     const button = content.nextElementSibling;
     if (user_coins >= cost) {
-        content.style.filter = "blur(0px)";
-        button.innerHTML = "";
-        purchase(cost);
-        localStorage.setItem(id, "unlocked");
+        purchase(cost, id);
+
+        setTimeout(() => {
+            content.style.filter = "blur(0px)";
+            button.innerHTML = "";
+            localStorage.setItem(id, "unlocked");
+        }, 700);
     } else {
         showModal();
     }
@@ -168,7 +212,7 @@ function changeColor() {
         for (let item of gridItems) {
             item.style.backgroundColor = colorPicker.value;
         }
-        purchase(100);
+        purchase(cost, "#unlock-background");
         getRgbFromHex();
     } else {
         showModal();
@@ -259,7 +303,7 @@ function populateGrid() {
     const width = window.innerWidth;
     const height = window.innerHeight;
 
-    const cellSize = 100;
+    const cellSize = 25;
     const columns = Math.ceil(width / cellSize);
     const rows = Math.ceil(height / cellSize);
 
@@ -317,7 +361,6 @@ document.addEventListener("scroll", () => {
     }
 
     let current_vertical_position = window.scrollY;
-    console.log(current_vertical_position);
     if (current_vertical_position <= 320) {
         document.getElementById("bio-tab").classList.add("current-tab");
     } else if (
