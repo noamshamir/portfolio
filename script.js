@@ -128,7 +128,7 @@ function modifyCoins(change, delay = 0) {
 
 function purchase(cost, purchase_button_id) {
     if (user_coins >= cost) {
-        modifyCoins(-cost, 1);
+        modifyCoins(-cost);
         moveCoinFromAccount(cost, purchase_button_id);
     } else {
         showModal();
