@@ -23,10 +23,13 @@
                 <img src="images/coins/1.png" alt="Button Image" class="button-image" id="add-one-button"/>
             </button>
         </div>
+       
         <div id="bank-account">
-            <button id="coin-count" onclick="visualizeCoins()">$0</button>
-            <div id="visualize-coins"></div>
+            <button id="coin-count" onclick="toggleCoinDisplay()">$0</button>
+            <button id="coin-toggle" onclick="toggleCoinDisplay()">▼</button>
+            <div id="visualize-coins" ></div>
         </div>
+        
         <div class="top-left-button" id="add-one-moving-coin-div">        
             <img class="button-image" id="add-one-moving-coin" src="images/coins/1.png">        
         </div>

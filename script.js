@@ -375,3 +375,16 @@ document.addEventListener("scroll", () => {
         document.getElementById("experience-tab").classList.add("current-tab");
     }
 });
+
+function toggleCoinDisplay() {
+    const visualizeCoinsDiv = document.getElementById("visualize-coins");
+    visualizeCoinsDiv.classList.toggle("hidden");
+
+    // Optionally, rotate the toggle arrow for feedback
+    const toggleButton = document.getElementById("coin-toggle");
+    if (visualizeCoinsDiv.classList.contains("hidden")) {
+        toggleButton.textContent = "▼";
+    } else {
+        toggleButton.textContent = "▲";
+    }
+}
