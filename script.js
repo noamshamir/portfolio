@@ -18,7 +18,7 @@ window.onload = function () {
         "por-description",
         "unit-conversion-description",
         "enigma-description",
-        "job-description",
+        "mabel-center-work-details",
     ];
     for (id of ids) {
         unblurOnload(id);
@@ -29,6 +29,13 @@ function incrementCoinsButton(increment = 1) {
     modifyCoins(increment, 0.5);
     if (modifyCoins) {
         moveCoinToAccount();
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(
+            `Plus ${increment} coin`
+        );
+        utterance.pitch = 3;
+
+        window.speechSynthesis.speak(utterance);
     }
 }
 
@@ -130,6 +137,11 @@ function purchase(cost, purchase_button_id) {
     if (user_coins >= cost) {
         modifyCoins(-cost);
         moveCoinFromAccount(cost, purchase_button_id);
+        window.speechSynthesis.cancel();
+        let message = `Bought ${purchase_button_id} for ${cost} coins`;
+        const utterance = new SpeechSynthesisUtterance(message);
+        utterance.pitch = 2;
+        window.speechSynthesis.speak(utterance);
     } else {
         showModal();
     }
@@ -288,6 +300,10 @@ function getRgbFromHex() {
 
 function showModal() {
     document.getElementById("modal").style.display = "flex";
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(`Not enough coins buddy`);
+    utterance.pitch = 0.1;
+    window.speechSynthesis.speak(utterance);
 }
 
 function closeModal() {
@@ -347,6 +363,10 @@ document.addEventListener("DOMContentLoaded", () => {
         waveHand.style.animation = "none";
         void waveHand.offsetWidth;
         waveHand.style.animation = "wave-animation 0.6s ease-in-out";
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(`Hi! I'm Noam`);
+        utterance.pitch = 1;
+        window.speechSynthesis.speak(utterance);
     });
 
     waveHand.addEventListener("animationend", () => {
@@ -380,7 +400,6 @@ function toggleCoinDisplay() {
     const visualizeCoinsDiv = document.getElementById("visualize-coins");
     visualizeCoinsDiv.classList.toggle("hidden");
 
-    // Optionally, rotate the toggle arrow for feedback
     const toggleButton = document.getElementById("coin-toggle");
     if (visualizeCoinsDiv.classList.contains("hidden")) {
         toggleButton.textContent = "▼";

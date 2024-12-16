@@ -26,7 +26,7 @@
        
         <div id="bank-account">
             <button id="coin-count" onclick="toggleCoinDisplay()">$0</button>
-            <button id="coin-toggle" onclick="toggleCoinDisplay()">▼</button>
+            <button id="coin-toggle" onclick="toggleCoinDisplay()">▲</button>
             <div id="visualize-coins" ></div>
         </div>
         
@@ -76,72 +76,7 @@
                         <h2>Projects</h2>
                     </div>
                     <div class="card-container">
-                        <div class="card" class="card-general">
-                            <img
-                                src="images/projects/chain_translate.png"
-                                alt="Project Image"
-                                class="card-image"
-                            />
-                            <div class="card-header">
-                                <h3 class="card-title">Chain Translator</h3>
-                                <div class="card-links">
-                                    <a
-                                        href="https://github.com/noamshamir/Google-Chain-Translator"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="icon-link"
-                                        aria-label="View Source Code on GitHub"
-                                    >
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-tools">
-                                <div class="card-tools">
-                                    <div class="pill" id="html-pill">
-                                        <img
-                                            src="images/icons/html.webp"
-                                            alt="HTML"
-                                            class="pill-icon"
-                                        />
-                                        <div class="pill-grid-container"></div>
-
-                                        <span class="pill-text">HTML</span>
-                                    </div>
-                                    <div class="pill" id="css-pill">
-                                        <img
-                                            src="images/icons/css.png"
-                                            alt="CSS"
-                                            class="pill-icon"
-                                        />
-                                        <span class="pill-text">CSS</span>
-                                    </div>
-                                    <div class="pill" id="js-pill">
-                                        <img
-                                            src="images/icons/javascript.webp"
-                                            alt="JavaScript"
-                                            class="pill-icon"
-                                        />
-                                        <span class="pill-text"
-                                            >JavaScript</span
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blur-container">
-                                <div id="google-chain-translate-description" class="blur card-description">
-                                    <p>
-                                        A user inputs a phrase, which is translated through
-                                         random languages using the Google Translate API.
-                                          Like a game of telephone, the output at the end of the chain is often surprising.
-                                    </p>
-                                </div>
-                                <button class="unlock-box" onclick="unblurContent('google-chain-translate-description', 20)">
-                                    <i class="fa fa-lock"></i>
-                                    <img src="images/coins/20.png" alt="Coin Icon" class="coin-icon" />
-                                </button>
-                            </div>
-                        </div>
+                        
                         <div class="card" class="card-general">
                             <img
                                 src="images/projects/chopsticks_minimax.png"
@@ -230,6 +165,72 @@
                                     </p>
                                 </div>
                                 <button class="unlock-box" onclick="unblurContent('por-description', 20)">
+                                    <i class="fa fa-lock"></i>
+                                    <img src="images/coins/20.png" alt="Coin Icon" class="coin-icon" />
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card" class="card-general">
+                            <img
+                                src="images/projects/chain_translate.png"
+                                alt="Project Image"
+                                class="card-image"
+                            />
+                            <div class="card-header">
+                                <h3 class="card-title">Chain Translator</h3>
+                                <div class="card-links">
+                                    <a
+                                        href="https://github.com/noamshamir/Google-Chain-Translator"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="icon-link"
+                                        aria-label="View Source Code on GitHub"
+                                    >
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-tools">
+                                <div class="card-tools">
+                                    <div class="pill" id="html-pill">
+                                        <img
+                                            src="images/icons/html.webp"
+                                            alt="HTML"
+                                            class="pill-icon"
+                                        />
+                                        <div class="pill-grid-container"></div>
+
+                                        <span class="pill-text">HTML</span>
+                                    </div>
+                                    <div class="pill" id="css-pill">
+                                        <img
+                                            src="images/icons/css.png"
+                                            alt="CSS"
+                                            class="pill-icon"
+                                        />
+                                        <span class="pill-text">CSS</span>
+                                    </div>
+                                    <div class="pill" id="js-pill">
+                                        <img
+                                            src="images/icons/javascript.webp"
+                                            alt="JavaScript"
+                                            class="pill-icon"
+                                        />
+                                        <span class="pill-text"
+                                            >JavaScript</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blur-container">
+                                <div id="google-chain-translate-description" class="blur card-description">
+                                    <p>
+                                        A user inputs a phrase, which is translated through
+                                         random languages using the Google Translate API.
+                                          Like a game of telephone, the output at the end of the chain is often surprising.
+                                    </p>
+                                </div>
+                                <button class="unlock-box" onclick="unblurContent('google-chain-translate-description', 20)">
                                     <i class="fa fa-lock"></i>
                                     <img src="images/coins/20.png" alt="Coin Icon" class="coin-icon" />
                                 </button>
@@ -369,7 +370,7 @@
                         <span class="pill-text">Python</span>
                     </div>
                     <div class="blur-container" id="job-blur-container">
-                        <div id="job-description" class="blur card-description">
+                        <div id="mabel-center-work-details" class="blur card-description">
                             <p>
                                 <ul>
                                     <li>
@@ -381,7 +382,7 @@
                                 </ul>
                             </p>
                         </div>
-                        <button class="unlock-box" onclick="unblurContent('job-description', 50)">
+                        <button class="unlock-box" onclick="unblurContent('mabel-center-work-details', 50)">
                             <i class="fa fa-lock"></i>
                             <img src="images/coins/50.png" alt="Coin Icon" class="coin-icon" />
                         </button>
