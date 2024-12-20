@@ -27,7 +27,7 @@
         <div id="bank-account">
             <button id="coin-count" onclick="toggleCoinDisplay()">$0</button>
             <button id="coin-toggle" onclick="toggleCoinDisplay()">▲</button>
-            <div id="visualize-coins" ></div>
+            <div id="visualize-coins"></div>
         </div>
         
         <div class="top-left-button" id="add-one-moving-coin-div">        
@@ -45,29 +45,33 @@
                     <a href="#experience">Experience</a>
                 </button>
             </div>
-
+            <div id="profile-picture-container">
+                <div id="profile-picture">
+                    <img src="images/profile.png"/>
+                </div>
+            </div>
             <section id="bio" class="bio-container">
-                <div id="wave-container">
-                    <span id="wave-hand" class="wave-hand">👋</span>
-                    <p class="hi">Hi, I'm</p>
-                </div>
-                
-                <div id="bio-header">
-                    <h2 class="myname" style="color: rgb(255, 255, 255)">Noam</h2>
-                    <h2 class="myname" style="color: white">Shamir</h2>
-                </div>
-                <p class="role">High School Sophomore</p>
-                <p class="interest">Web Developer</p>
-                <p class="location">
-                    <i class="fas fa-map-marker-alt"></i> Austin, Texas
-                </p>
-                <div class="buttons">
-                    <a href="mailto:noam.shamir@sstx.org" target="_blank" aria-label="Email" >
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://github.com/noamshamir" class="icon"
-                        ><i class="fab fa-github"></i
-                    ></a>
+                <div id="bio-content">
+                    <div id="wave-container">
+                        <span id="wave-hand" class="wave-hand">👋</span>
+                        <p class="hi">Hi, I'm</p>
+                    </div>
+            
+                    <div id="bio-header">
+                        <h2 class="myname" style="color: rgb(255, 255, 255)">Noam</h2>
+                        <h2 class="myname" style="color: white">Shamir</h2>
+                    </div>
+                    <p class="role">High School Sophomore</p>
+                    <p class="interest">Web Developer</p>
+                    <p class="location">
+                        <i class="fas fa-map-marker-alt"></i> Austin, Texas
+                    </p>
+                    <div class="buttons">
+                        <a href="mailto:noam.shamir@sstx.org" target="_blank" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/noamshamir" class="icon"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
             </section>
             <section>
@@ -92,7 +96,7 @@
                                         rel="noopener noreferrer"
                                         class="icon-link"
                                         aria-label="View Source Code on GitHub"
-                                        onclick = 'modifyCoins(50)'
+                                        onclick='modifyCoins(50)'
                                     >
                                         <i class="fa-brands fa-github"></i>
                                     </a>
@@ -198,8 +202,6 @@
                                             alt="HTML"
                                             class="pill-icon"
                                         />
-                                        <div class="pill-grid-container"></div>
-
                                         <span class="pill-text">HTML</span>
                                     </div>
                                     <div class="pill" id="css-pill">
@@ -216,9 +218,7 @@
                                             alt="JavaScript"
                                             class="pill-icon"
                                         />
-                                        <span class="pill-text"
-                                            >JavaScript</span
-                                        >
+                                        <span class="pill-text">JavaScript</span>
                                     </div>
                                 </div>
                             </div>
@@ -226,8 +226,8 @@
                                 <div id="google-chain-translate-description" class="blur card-description">
                                     <p>
                                         A user inputs a phrase, which is translated through
-                                         random languages using the Google Translate API.
-                                          Like a game of telephone, the output at the end of the chain is often surprising.
+                                        random languages using the Google Translate API.
+                                        Like a game of telephone, the output at the end of the chain is often surprising.
                                     </p>
                                 </div>
                                 <button class="unlock-box" onclick="unblurContent('google-chain-translate-description', 20)">
@@ -280,6 +280,7 @@
                                 <div id="unit-conversion-description" class="blur card-description">
                                     <p>
                                         A Flutter App that converts a wide range of units, including temperature, volume, weight, length, and size. Available offline.
+                                    </p>
                                 </div>
                                 <button class="unlock-box" onclick="unblurContent('unit-conversion-description', 20)">
                                     <i class="fa fa-lock"></i>
@@ -319,7 +320,7 @@
                                     </div>
                                 </div>
                                 <div class="card-tools">
-                                    <div class="pill t-kinter-pill" id="python-pill" >
+                                    <div class="pill t-kinter-pill" id="python-pill">
                                         <img
                                             src="images/icons/tkinter.png"
                                             alt="Python"
@@ -389,26 +390,23 @@
                     </div>
                 </div>
             </section>
-                <hr class="divider">
-                <div class="header-divider">
-                    <div class="header-left">
-                        <p class="header-left">Noam Shamir</p>
-                    </div>
-                    <div class="header-right">
-                        <a href="mailto:noam.shamir@sstx.org" target="_blank" aria-label="Email" >
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://www.github.com" target="_blank" class="social-icon">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
+            <hr class="divider">
+            <div class="header-divider">
+                <div class="header-left">
+                    <p class="header-left">Noam Shamir</p>
                 </div>
-                <hr class="divider-line">
-            </section>
-            <br />
-            <br />
+                <div class="header-right">
+                    <a href="mailto:noam.shamir@sstx.org" target="_blank" aria-label="Email" >
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.github.com" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <hr class="divider-line">
+            <br /><br />
         </div>
         <script src="script.js"></script>
-
     </body>
 </html>
