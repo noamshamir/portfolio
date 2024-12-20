@@ -101,7 +101,6 @@ function moveCoinFromAccount(cost, targetElementId) {
         coin.style.opacity = 0;
     });
 
-    // Remove the coin after animation
     coin.addEventListener("transitionend", () => {
         coin.remove();
     });
@@ -140,7 +139,19 @@ function purchase(cost, purchase_button_id) {
         window.speechSynthesis.cancel();
         let message = `Bought ${purchase_button_id} for ${cost} coins`;
         const utterance = new SpeechSynthesisUtterance(message);
-        utterance.pitch = 2;
+        utterance.pitch = 1;
+        let voices = [];
+        console.log(speechSynthesis.getVoices());
+        for (let voice of speechSynthesis.getVoices()) {
+            if (
+                voice.name.toLowerCase().includes("grandpa") &&
+                voice.lang.includes("de-DE")
+            ) {
+                voices.push(voice);
+            }
+        }
+        console.log(voices);
+        utterance.voice = voices[0];
         window.speechSynthesis.speak(utterance);
     } else {
         showModal();
@@ -303,6 +314,8 @@ function showModal() {
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(`Not enough coins buddy`);
     utterance.pitch = 0.1;
+    utterance.rate = 0.5;
+
     window.speechSynthesis.speak(utterance);
 }
 
@@ -399,7 +412,6 @@ document.addEventListener("scroll", () => {
 function toggleCoinDisplay() {
     const visualizeCoinsDiv = document.getElementById("visualize-coins");
     visualizeCoinsDiv.classList.toggle("hidden");
-
     const toggleButton = document.getElementById("coin-toggle");
     if (visualizeCoinsDiv.classList.contains("hidden")) {
         toggleButton.textContent = "▼";
