@@ -19,6 +19,7 @@ window.onload = function () {
         "unit-conversion-description",
         "enigma-description",
         "mabel-center-work-details",
+        "asylum-description",
     ];
     for (id of ids) {
         unblurOnload(id);
@@ -140,18 +141,6 @@ function purchase(cost, purchase_button_id) {
         let message = `Bought ${purchase_button_id} for ${cost} coins`;
         const utterance = new SpeechSynthesisUtterance(message);
         utterance.pitch = 1;
-        let voices = [];
-        console.log(speechSynthesis.getVoices());
-        for (let voice of speechSynthesis.getVoices()) {
-            if (
-                voice.name.toLowerCase().includes("grandpa") &&
-                voice.lang.includes("de-DE")
-            ) {
-                voices.push(voice);
-            }
-        }
-        console.log(voices);
-        utterance.voice = voices[0];
         window.speechSynthesis.speak(utterance);
     } else {
         showModal();
@@ -312,9 +301,9 @@ function getRgbFromHex() {
 function showModal() {
     document.getElementById("modal").style.display = "flex";
     window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(`Not enough coins buddy`);
+    const utterance = new SpeechSynthesisUtterance(`Not enough coins`);
     utterance.pitch = 0.1;
-    utterance.rate = 0.5;
+    utterance.rate = 0.8;
 
     window.speechSynthesis.speak(utterance);
 }

@@ -14,7 +14,7 @@
         <div id="grid-container"></div>
         <div id="modal" class="modal">
             <div class="modal-content">
-                <p>Purchase rejected. Not enough coins. Get more coins by clicking the button in the top left.</p>
+                <p>Purchase rejected. Not enough coins. Get more coins by clicking the coin button in the top left of your screen.</p>
                 <button id="close-modal" onclick="closeModal()">X</button>
             </div>
         </div>
@@ -80,7 +80,71 @@
                         <h2>Projects</h2>
                     </div>
                     <div class="card-container">
-                        
+                        <div class="card" class="card-general">
+                            <img
+                                src="images/projects/asylumrates/laptop.png"
+                                alt="Project Image"
+                                class="card-image"
+                            />
+                            <div class="card-header">
+                                <h3 class="card-title">Asylum Rates Search</h3>
+                                <div class="card-links">
+                                    <a
+                                        href="https://github.com/noamshamir/chopsticks"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="icon-link"
+                                        aria-label="View Source Code on GitHub"
+                                        onclick='modifyCoins(50)'
+                                    >
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a
+                                        href="https://rates.asylumtools.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="icon-link"
+                                        aria-label="View Website"
+                                        onclick='modifyCoins(100)'
+                                    >
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-tools">
+                                <div class="card-tools">
+                                    <div class="pill" id="python-pill">
+                                        <img
+                                            src="images/icons/python.webp"
+                                            alt="Python"
+                                            class="pill-icon"
+                                        />
+                                        <span class="pill-text">Python</span>
+                                    </div>
+                                    <div class="pill" id="python-pill">
+                                        <img
+                                            src="images/icons/react.png"
+                                            alt="React"
+                                            class="pill-icon"
+                                        />
+                                        <span class="pill-text">React</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blur-container" id="tic-tac-toe-blur-container">
+                                <div id="asylum-description" class="blur card-description">
+                                    <p>
+                                        A website for asylum seekers to find information, 
+                                        such as case approval percentage, about their judge and/or city, 
+                                        helping them with their asylum chances.
+                                    </p>
+                                </div>
+                                <button class="unlock-box" onclick="unblurContent('asylum-description', 20)">
+                                    <i class="fa fa-lock"></i>
+                                    <img src="images/coins/20.png" alt="Coin Icon" class="coin-icon" />
+                                </button>
+                            </div>
+                    </div>
                         <div class="card" class="card-general">
                             <img
                                 src="images/projects/chopsticks_minimax.png"
@@ -343,13 +407,13 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="card-holder"></div>
+                            
                     </div>
                 </div>
             </section>
             <section id="experience">
                 <div id="experience-header" class="tab-header">
-                    <h2>Experience</h2>
+                    <h2>Work Experience</h2>
                 </div>
                 <div class="job-card-info" class="card-general">
                     <div class="top-row">
@@ -396,7 +460,7 @@
                     <p class="header-left">Noam Shamir</p>
                 </div>
                 <div class="header-right">
-                    <a href="mailto:noam.shamir@sstx.org" target="_blank" aria-label="Email" >
+                    <a href="mailto:noamshamir09@gmail.com" target="_blank" aria-label="Email" >
                         <i class="fas fa-envelope"></i>
                     </a>
                     <a href="https://www.github.com" target="_blank" class="social-icon">
